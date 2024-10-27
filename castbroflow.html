@@ -38,6 +38,27 @@
             background-color: #f1f1f1;
             border-left: 1px solid #ccc;
         }
+        .medium {
+            width: 600px; /* Initial width */
+            height: auto; /* Maintain aspect ratio */
+            transition: transform 0.3s; /* Smooth transform */
+        }
+        .image-container {
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center the image horizontally */
+    }
+
+        .image-container {
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center the image horizontally */
+    }
+    .responsive-image {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 600px; /* Optional max width */
+    }
+        
+        
     </style>
 </head>
 <body>
@@ -47,7 +68,9 @@
     <button onclick="loadContent('content2')">RETURN</button>
     <button onclick="loadContent('content3')">ORDER</button>
     <button onclick="loadContent('content4')">3RD PARTY</button>
-    <button onclick="loadContent('content5')">REF CODE</button>
+    <button onclick="loadContent('content5')">REF CODE?</button>
+    <button onclick="loadContent('content8')">PERSONAL Acct</button>
+    <button onclick="loadContent('content9')">EVRI EXP DEL</button>
     <button onclick="loadContent('content6')">2X MISSED</button>
 
     <div class="inline-container">
@@ -184,7 +207,23 @@
     </ul>`,
             'content5': `<h2 style="color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px;">REF CODE</h2>
         <p><strong>Reminders for Offer Codes</strong></p>
+        <!-- Insert your image here -->
 
+<div class="image-container">        
+<img src="OTP.PNG" alt="Reference Code" class="responsive-image">
+</div>
+<div class="image-container">        
+<img src="mediainsert.PNG" alt="Reference Code" class="responsive-image">
+</div>
+<div class="image-container">        
+<img src="web.PNG" alt="Reference Code" class="responsive-image">
+</div>
+<div class="image-container">        
+<img src="cobinumb.PNG" alt="Reference Code" class="responsive-image">
+</div>
+<div class="image-container">        
+<img src="notfound.PNG" alt="Reference Code" class="responsive-image">
+</div>
         <p>
             <strong>Fun Catalogue (MO. Pages):</strong><br>
             No offer codes included here. Please check the order form, Damart letter, or the latest statement for offer codes. 
@@ -218,8 +257,7 @@
             to these guidelines, you help create a <span style="color: #28a745; font-weight: bold;">consistent</span> and 
             <span style="color: #28a745; font-weight: bold;">positive customer experience</span>.
         </p>
-<!-- Insert your image here -->
-        <img src="images/OTP.jpg" alt="Reference Code" />
+
 `,
             'content6': `<h2 style="color: #dc3545; border-bottom: 2px solid #dc3545; padding-bottom: 5px;">FAILED RETURN COLLECTION (1-2 times)</h2>
         
@@ -305,7 +343,34 @@
             </li>
             <li><strong>Re-Arrange Collection:</strong> Advise to give <strong>3 days for investigation</strong> (not including SUNDAY).</li>
         </ol>`
-        
+       ,
+            'content8':`<h2 style="color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px;">PERSONAL ACCT</h2>
+        <p><strong>Reminders for Personal Account</strong></p>
+        <!-- Insert your image here -->
+
+<div class="image-container">        
+<img src="PAsteps.PNG" alt="Reference Code" class="responsive-image">
+</div>
+<div class="image-container">        
+<img src="personalAccount.PNG" alt="Reference Code" class="responsive-image">
+</div>
+
+
+`,
+    
+    'content9':`<h2 style="color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px;">EVRI</h2>
+        <p><strong>EVRI EXPRESS DELIVERY</strong></p>
+        <!-- Insert your image here -->
+
+<div class="image-container">        
+<img src="evri.PNG" alt="Reference Code" class="responsive-image">
+</div>
+
+     
+
+`
+            
+            
             
         };
 
@@ -321,6 +386,8 @@
             'BUY NOW PAY LATER- (BNPL)': { src: 'BUY NOW PAY LATER- (BNPL).pdf', width: '100%', height: '100%' },
             'Placing an order': { src: 'Placing an order.pdf', width: '100%', height: '100%' },
             'REF CODE': { src: 'refcode.pdf', width: '100%', height: '100%' },
+            'PERSONAL Acct': { src: '2xmissed.pdf', width: '100%', height: '100%' },
+            'EVRI EXP DEL': { src: '2xmissed.pdf', width: '100%', height: '100%' },
             '2X MISSED': { src: '2xmissed.pdf', width: '100%', height: '100%' },
             '3X MISSED': { src: '3xmissed.pdf', width: '100%', height: '100%' }
         };
@@ -339,6 +406,21 @@
                 <h2>Welcome</h2>
                 <p>Click on a button or select an option to load content here.</p>
             `;
+        }
+    
+    function changeImage() {
+            const img = document.getElementById('myImage');
+            img.src = 'images/image2.PNG'; // Change to another image path
+        }
+
+        function resizeImage() {
+            const img = document.getElementById('myImage');
+            img.style.width = img.style.width === '200px' ? '300px' : '200px'; // Toggle size
+        }
+
+        function rotateImage() {
+            const img = document.getElementById('myImage');
+            img.style.transform = img.style.transform === 'rotate(180deg)' ? 'rotate(0deg)' : 'rotate(180deg)';
         }
     }
 </script>
